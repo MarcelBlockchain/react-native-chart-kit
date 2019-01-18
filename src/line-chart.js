@@ -125,7 +125,7 @@ class LineChart extends AbstractChart {
             d={result}
             fill="none"
             stroke={this.props.chartConfig.color(0.2)}
-            strokeWidth={3}
+            strokeWidth={1} // instead of 3 --> more details
           />
         )
       });
@@ -197,12 +197,13 @@ class LineChart extends AbstractChart {
               paddingTop,
               paddingRight
             })}
+            {/* too many dots when when used for Bitcoin graphs 
             {this.renderVerticalLines({
               ...config,
               data: data.datasets[0].data,
               paddingTop,
               paddingRight
-            })}
+            })} */}
             {this.renderVerticalLabels({
               ...config,
               labels,
@@ -223,12 +224,13 @@ class LineChart extends AbstractChart {
               paddingRight,
               paddingTop
             })}
+            {/* too many dots when when used for Bitcoin graphs
             {withDots && this.renderDots({
               ...config,
               data: data.datasets,
               paddingTop,
               paddingRight
-            })}
+            })} */}
           </G>
         </Svg>
       </View>
